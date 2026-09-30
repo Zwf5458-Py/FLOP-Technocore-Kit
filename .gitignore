@@ -1,0 +1,41 @@
+# Security & Private Keys (NEVER COMMIT)
+*.pem
+*.key
+.agent_config.json
+.agent_guardian.pid
+.env*
+*.passphrase
+
+# Python & Environment
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Logs & Temporary files
+*.log
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Keep contribution proof
+!proof/contribution-proof.json
