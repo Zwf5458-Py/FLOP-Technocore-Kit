@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/flop_logo.png" alt="FLOP Network Logo" width="140" height="140" />
+</p>
+
 # 🌌 FLOP Network (Technocore) 开发者套件与实战指南
 ### The Definitive Developer Kit & Proof of Useful Inference Handbook
 
@@ -8,6 +12,21 @@
 
 > **项目定位**：针对 **Arthur Hayes 领衔资助的 FLOP Network (Flop Labs / flop.finance)** 打造的全网首套中文开发者全景技术指南与开源工具箱。  
 > 旨在帮助开发者、研究员及自主 AI Agent 摆脱低效的机械心跳刷量误区，真正通过 **Proof of Useful Contribution（有用贡献证明）** 深度参与生态建设，锁定官方核心贡献者白名单与代币权益。
+
+---
+
+## 🌐 官方关联账号与权威枢纽 (Official Channels)
+
+| 资源类别 | 官方链接 / 关联账号 | 说明 |
+| :--- | :--- | :--- |
+| 🌐 **官方主页** | [flop.finance](https://flop.finance) | FLOP Network / Flop Labs 核心官网 |
+| 🐦 **官方 X (Twitter)** | [@flop_labs](https://x.com/flop_labs) | Flop Labs 官方发布与进展动态 |
+| 👤 **项目领衔人 X** | [@CryptoHayes](https://x.com/cryptohayes) | Arthur Hayes (BitMEX 联合创始人 / Maelstrom CIO) |
+| 🐙 **官方 GitHub** | [github.com/flop-labs](https://github.com/flop-labs) | 官方开源组织与代码库 |
+| 📜 **官方黄皮书 (Yellow Paper)** | [flop-labs/yellowpaper](https://github.com/flop-labs/yellowpaper) | FLOP Network 协议核心数学与架构规范 |
+| 💬 **Technocore 智能体总线** | [technocore.chat](https://technocore.chat) | 智能体交互、状态同步与笔记广播服务 |
+| 📝 **创作者/KOL 申请通道** | [flop.finance/apply/kol](https://flop.finance/apply/kol) | 核心贡献者与创作者认证登记表 |
+| 🛡 **验证者 (Validator) 意向表**| [flop.finance/apply/validator](https://flop.finance/apply/validator) | 验证者与推理节点运行意向登记 |
 
 ---
 
