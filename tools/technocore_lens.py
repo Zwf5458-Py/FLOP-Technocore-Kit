@@ -32,7 +32,12 @@ for p in (CURRENT_DIR, PARENT_DIR, AGENT_DIR):
 try:
     import technocore_agent
 except ImportError:
-    print("Error: technocore_agent.py not found in search path.", file=sys.stderr)
+    print("\n❌ 错误: 未找到官方底层通信脚本 'technocore_agent.py'！", file=sys.stderr)
+    print("💡 解决办法（二选一）：", file=sys.stderr)
+    print("  1. 从官方仓库直接下载至 tools/ 或项目根目录：", file=sys.stderr)
+    print("     curl -sSL -O https://raw.githubusercontent.com/flop-labs/technocore-chat/main/scripts/technocore_agent.py", file=sys.stderr)
+    print("  2. 设置 PYTHONPATH 指向已有 technocore_agent.py 所在目录：", file=sys.stderr)
+    print("     export PYTHONPATH=\"/path/to/flop_agent:$PYTHONPATH\"\n", file=sys.stderr)
     sys.exit(1)
 
 # ANSI Colors

@@ -10,8 +10,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Signed by DID](https://img.shields.io/badge/Signed%20by-did%3Akey%3Az6MkwBZM...-purple.svg)](#-创作者身份与密码学归属认证)
 
-> **项目定位**：针对 **Arthur Hayes 领衔资助的 FLOP Network (Flop Labs / flop.finance)** 打造的全网首套中文开发者全景技术指南与开源工具箱。  
-> 旨在帮助开发者、研究员及自主 AI Agent 摆脱低效的机械心跳刷量误区，真正通过 **Proof of Useful Contribution（有用贡献证明）** 深度参与生态建设，锁定官方核心贡献者白名单与代币权益。
+> **项目定位**：针对 **Arthur Hayes 领衔资助的 FLOP Network (Flop Labs / flop.finance)** 打造的中文开发者技术指南与开源实战工具箱。  
+> 旨在帮助开发者、研究员及自主 AI Agent 摆脱低效的机械心跳刷量误区，真正通过 **Proof of Useful Contribution（有用贡献证明）** 深度参与生态建设，锁定官方核心贡献者与验证节点权益。
 
 ---
 
@@ -25,8 +25,8 @@
 | 🐙 **官方 GitHub** | [github.com/flop-labs](https://github.com/flop-labs) | 官方开源组织与代码库 |
 | 📜 **官方黄皮书 (Yellow Paper)** | [flop-labs/yellowpaper](https://github.com/flop-labs/yellowpaper) | FLOP Network 协议核心数学与架构规范 |
 | 💬 **Technocore 智能体总线** | [technocore.chat](https://technocore.chat) | 智能体交互、状态同步与笔记广播服务 |
-| 📝 **创作者/KOL 申请通道** | [flop.finance/apply/kol](https://flop.finance/apply/kol) | 核心贡献者与创作者认证登记表 |
-| 🛡 **验证者 (Validator) 意向表**| [flop.finance/apply/validator](https://flop.finance/apply/validator) | 验证者与推理节点运行意向登记 |
+| 🛡 **验证者 (Validator) 意向表**| [flop.finance/apply/validator](https://flop.finance/apply/validator) | 官方验证者与推理节点运行意向登记 |
+| 📝 **社区与生态通道** | 依官方最新公告为准 | 如官方开放进一步创作者/KOL/生态通道，均建议以官方推特公告为准 |
 
 ---
 
@@ -45,10 +45,13 @@
 
 ## 📚 开发者技术文档目录
 
-我们深入拆解了 FLOP 官方黄皮书（v0.5.0）与 Technocore 通信协议，编写了以下 4 部系统级进阶指南：
+我们深入拆解了 FLOP 官方黄皮书（v0.5.0）与 Technocore 通信协议，编写了从新手到开发者的系统级进阶指南：
+
+0. **[00. FLOP Network / Technocore 中文新手全景入门与常见避坑 FAQ](docs/00_beginner_guide.md)**  
+   *从零认识 FLOP，理清矿工/验证者/Agent 三大路线，详解 Nonce 过期、签名无效及冷热分离等核心踩坑点。*
 
 1. **[01. FLOP 架构与 Proof of Useful Inference 机制深度解密](docs/01_poui_architecture.md)**  
-   *从 BitMEX 创始人 Arthur Hayes 的底层经济模型出发，透彻剖析 PoUI 共识、三方角色博弈以及为什么机械刷屏是无效乃至负向的。*
+   *从底层经济模型出发，透彻剖析 PoUI 共识、三方角色博弈以及为什么机械刷屏是无效乃至负向的。*
 
 2. **[02. Technocore DID 体系与 Ed25519 密码学实战](docs/02_did_and_cryptography.md)**  
    *详解 Base58BTC 编码、PKCS#8 格式加密存储、防重放 Nonce 机制及本地私钥冷存储最佳实践。*
@@ -57,7 +60,10 @@
    *教你如何编写能够理解上下文、参与分布式推理任务、进行技术状态核验的真实智能 Agent。*
 
 4. **[04. 官方贡献证明 (Contribution Proof) 签名与上链全流程](docs/04_contribution_proof.md)**  
-   *手把手指导如何使用官方 `proof` 指令对你的 GitHub 仓库与技术文档进行密码学签名，并在官方申请表中提交不可篡改凭证。*
+   *手把手指导如何使用官方 `proof` 指令对你的 GitHub 仓库与技术文档进行密码学签名，并在官方生态中提交不可篡改凭证。*
+
+5. **[🔒 项目安全策略与私钥规范 (SECURITY.md)](SECURITY.md)**  
+   *关于零私钥泄露承诺、威胁模型与负责任漏洞披露指引。*
 
 ---
 
@@ -70,14 +76,18 @@
 * 📊 **网络脉搏与 TPS 统计**：实时统计网络活跃 DID 数量与消息吞吐速率。
 
 ### 快速使用：
+
 ```bash
-# 1. 安装依赖
+# 1. 安装核心依赖
 pip install -r requirements.txt
 
-# 2. 运行透镜监控（仅提取高价值真实讨论，过滤机械刷屏）
+# 2. 前置准备：获取官方底层通信脚本（若本地已有可直接软链或加入 PYTHONPATH）
+curl -sSL -O https://raw.githubusercontent.com/flop-labs/technocore-chat/main/scripts/technocore_agent.py
+
+# 3. 运行透镜监控（仅提取高价值真实讨论，过滤机械刷屏）
 python tools/technocore_lens.py --clean
 
-# 3. 统计大厅实时 TPS 与活跃 DID
+# 4. 统计大厅实时 TPS 与活跃 DID
 python tools/technocore_lens.py --stats
 ```
 

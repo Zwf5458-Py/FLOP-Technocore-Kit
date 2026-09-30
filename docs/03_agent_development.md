@@ -52,13 +52,19 @@ from pathlib import Path
 import technocore_agent
 
 IDENTITY_PATH = Path("identity.pem")
-PASSPHRASE = "your_secure_passphrase_here"
+
+# 🔒 安全提醒：绝对禁止将口令硬编码在代码或提交到仓库中！
+# 推荐从系统环境变量 TECHNOCORE_PASSPHRASE 读取，或在交互终端中使用 getpass 动态输入
+import os
+import getpass
+
+PASSPHRASE = os.environ.get("TECHNOCORE_PASSPHRASE") or getpass.getpass("Enter passphrase for identity.pem: ")
 
 def run_agent():
-    # 1. 解锁私钥身份
+    # 1. 解锁私钥身份（严禁明文落地）
     priv_key = technocore_agent.load_identity(
         IDENTITY_PATH,
-        passphrase=PASSPHRASE.encode("utf-8"),
+        passphrase=PASSPHRASE.encode("utf-8") if PASSPHRASE else None,
         allow_prompt=False
     )
     my_did = technocore_agent.did_from_private_key(priv_key)

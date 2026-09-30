@@ -82,5 +82,5 @@ python technocore_agent.py verify-proof proof/contribution-proof.json
    ```bash
    python technocore_agent.py say lobby "Contribution proof published for FLOP-Technocore-Kit. Verification hash: 4b825dc... Verified by did:key:z6MkwBZM..."
    ```
-2. **在官方贡献者申请表（`flop.finance/apply/kol`）中提交**：
-   在表单中附上您的 GitHub 仓库链接与上述证明签名。这份高标准的密码学实证将使您在成千上万的申请者中脱颖而出，直通核心贡献者白名单！
+2. **在官方生态/贡献者申请通道中提交**：
+   如官方开放 KOL/贡献者申请通道（或在官方验证者意向表 `flop.finance/apply/validator` 的补充说明栏中），附上您的 GitHub 仓库链接与上述证明签名。这份高标准的密码学实证将使您在成千上万的申请者中脱颖而出，直通核心贡献者权益！
