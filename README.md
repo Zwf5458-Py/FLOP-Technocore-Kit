@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/flop_logo.png" alt="FLOP Network Logo" width="140" height="140" />
+  <img src="assets/flop_banner.png" alt="FLOP Network Logo" width="520" />
 </p>
 
 # 🌌 FLOP Network (Technocore) 开发者套件与实战指南
